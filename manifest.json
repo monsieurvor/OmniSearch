@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "OmniSearch+",
+    "description": "Choose which Search Engine to use on a query-by-query basis.",
+    "version": "1.0",
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["contentScript.js"]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "scripting",
+        "activeTab"
+    ],
+    "omnibox": {
+        "keyword": "se"
+    }
+}
